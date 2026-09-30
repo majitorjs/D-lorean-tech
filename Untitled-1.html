@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Lorian Tech | Agencia de Innovación y Desarrollo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==========================================
+            RESET & VARIABLES (Estilo D'Lorian Tech)
+        ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: #131b2e;
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --accent: #06b6d4;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ==========================================
+            NAVEGACIÓN FIJA
+        ========================================== */
+        .navbar-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo-brand {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .logo-brand span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .btn-nav-cta {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: background 0.3s ease !important;
+        }
+
+        .btn-nav-cta:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ==========================================
+            SISTEMA DE PESTAÑAS (TABS)
+        ========================================== */
+        .tab-content {
+            display: none;
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: 5rem;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ==========================================
+            SECCIÓN INICIO (HERO)
+        ========================================== */
+        .hero-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .badge-tech {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-main {
+            background: var(--primary);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-main:hover {
+            background: var(--primary-hover);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card-preview {
+            width: 100%;
+            height: 320px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-card-preview i {
+            font-size: 4rem;
+            color: var(--accent);
+        }
+
+        .hero-card-preview span {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* ==========================================
+            ENCABEZADOS DE SECCIÓN
+        ========================================== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-heading);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 span {
+            color: var(--accent);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================
+            SERVICIOS
+        ========================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+            PORTAFOLIO / PROYECTOS
+        ========================================== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-img {
+            height: 180px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            font-size: 3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ==========================================
+            SOBRE NOSOTROS
+        ========================================== */
+        .about-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .about-box h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .about-box p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ==========================================
+            CONTACTO
+        ========================================== */
+        .contact-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .form-group input, .form-group textarea {
+            background: rgba(9, 13, 22, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.9rem;
+            border-radius: 8px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        /* ==========================================
+            FOOTER
+        ========================================== */
+        .footer {
+            background: #05080f;
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================
+            RESPONSIVE
+        ========================================== */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .badge-tech {
+                margin: 0 auto 1.5rem auto;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación Fija con Pestañas -->
+    <header class="navbar-fixed">
+        <div class="nav-container">
+            <a onclick="switchTab('inicio')" class="logo-brand">
+                <i class="fa-solid fa-cube"></i> D'Lorian <span>Tech</span>
+            </a>
+            <nav class="nav-links">
+                <a onclick="switchTab('inicio')" id="link-inicio" class="active">Inicio</a>
+                <a onclick="switchTab('servicios')" id="link-servicios">Servicios</a>
+                <a onclick="switchTab('portafolio')" id="link-portafolio">Portafolio</a>
+                <a onclick="switchTab('nosotros')" id="link-nosotros">Nosotros</a>
+                <a onclick="switchTab('contacto')" id="link-contacto" class="btn-nav-cta">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECCIÓN INICIO -->
+    <main id="inicio" class="tab-content active hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge-tech"><i class="fa-solid fa-microchip"></i> Innovación sin límites</span>
+                <h1 class="hero-title">Transformamos ideas en <span>soluciones digitales</span></h1>
+                <p class="hero-description">En D’Lorian Tech desarrollamos software escalable, experiencias web modernas y estrategias tecnológicas para impulsar tu negocio al siguiente nivel.</p>
+                <div class="hero-actions">
+                    <button class="btn-main" onclick="switchTab('servicios')"><i class="fa-solid fa-arrow-right"></i> Ver Servicios</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card-preview">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Desarrollo & Software</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <main id="servicios" class="tab-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros <span>Servicios</span></h2>
+                <p>Soluciones tecnológicas diseñadas a la medida de tus necesidades.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Desarrollo Web Full-Stack</h3>
+                    <p>Creamos aplicaciones web robustas, rápidas y adaptables utilizando tecnologías modernas como HTML5, CSS3, JavaScript y bases de datos optimizadas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Diseño UI/UX</h3>
+                    <p>Interfaces atractivas e intuitivas enfocadas en ofrecer la mejor experiencia de usuario y optimizar la interacción digital.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Cloud & Repositorios</h3>
+                    <p>Gestión avanzada de versiones en GitHub, despliegue continuo y arquitectura en la nube para garantizar disponibilidad y seguridad.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN PORTAFOLIO -->
+    <main id="portafolio" class="tab-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proyectos <span>Destacados</span></h2>
+                <p>Una muestra del trabajo y la calidad que entregamos en cada desarrollo.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="project-info">
+                        <h3>TaskFlow</h3>
+                        <p>Plataforma inteligente de gestión de tareas y control de proyectos en tiempo real para equipos de alto rendimiento.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <div class="project-info">
+                        <h3>Biblioteca Digital Infantil</h3>
+                        <p>Entorno web interactivo con cuentos ilustrados y dinámicas pedagógicas para fomentar la lectura en niños.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <main id="nosotros" class="tab-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre <span>D'Lorian Tech</span></h2>
+                <p>Conoce al equipo detrás de la innovación.</p>
+            </div>
+            <div class="about-box">
+                <h3>Construyendo el futuro</h3>
+                <p>Somos una agencia de tecnología apasionada por crear software de alta calidad, fusionando el diseño moderno con una arquitectura de código limpia y eficiente.</p>
+                <p>Nuestro compromiso es acompañar a cada cliente en su proceso de transformación digital con profesionalismo y creatividad.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN CONTACTO -->
+    <main id="contacto" class="tab-content">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ponte en <span>Contacto</span></h2>
+                <p>¿Tienes un proyecto en mente? Hablemos y hagá-lo realidad.</p>
+            </div>
+            <div class="contact-wrapper">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 D'Lorian Tech. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE NAVEGACIÓN POR PESTAÑAS -->
+    <script>
+        function switchTab(tabId) {
+            // Ocultar todas las pestañas
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Remover la clase active de los enlaces de navegación
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Mostrar la pestaña seleccionada
+            document.getElementById(tabId).classList.add('active');
+
+            // Activar visualmente el enlace correspondiente
+            const activeLink = document.getElementById('link-' + tabId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Subir el scroll automáticamente al cambiar de pestaña
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
