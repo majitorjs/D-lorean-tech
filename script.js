@@ -6,26 +6,26 @@
 
 // 10 imágenes de la galería (ruta dentro de /assets/img/)
 const GALLERY = [
-  { src: 'assets/img/logo.jpg',               title: 'Logo D’Lorean Tech' },
-  { src: 'assets/img/captura-inicio.jpg',     title: 'Captura: página de inicio' },
-  { src: 'assets/img/captura-servicios.jpg',  title: 'Captura: servicios' },
-  { src: 'assets/img/captura-nosotros.jpg',   title: 'Captura: sobre nosotros' },
-  { src: 'assets/img/captura-proyectos.jpg',  title: 'Captura: proyectos de demostración' },
-  { src: 'assets/img/mockup-web.svg',         title: 'Mockup: página web corporativa' },
-  { src: 'assets/img/mockup-app.svg',         title: 'Mockup: aplicación móvil' },
-  { src: 'assets/img/mockup-dashboard.svg',   title: 'Mockup: dashboard administrativo' },
-  { src: 'assets/img/mockup-tienda.svg',      title: 'Mockup: tienda en línea' },
+  { src: 'assets/img/logo.jpg',               title: 'Logo' },
+  { src: 'assets/img/captura-inicio.jpg',     title: 'Captura: Inicio' },
+  { src: 'assets/img/captura-servicios.jpg',  title: 'Captura: Servicios' },
+  { src: 'assets/img/captura-nosotros.jpg',   title: 'Captura: Nosotros' },
+  { src: 'assets/img/captura-proyectos.jpg',  title: 'Captura: Proyectos' },
+  { src: 'assets/img/mockup-web.svg',         title: 'Mockup: Web' },
+  { src: 'assets/img/mockup-app.svg',         title: 'Mockup: App' },
+  { src: 'assets/img/mockup-dashboard.svg',   title: 'Mockup: Dashboard' },
+  { src: 'assets/img/mockup-tienda.svg',      title: 'Mockup: Tienda' },
   { src: 'assets/img/mockup-codigo.svg',      title: 'Código HTML, CSS y JavaScript' }
 ];
 
 // 5 videos. Pega el ID de YouTube (lo que va después de "v=") en "youtube".
 // Ejemplo: https://www.youtube.com/watch?v=dQw4w9WgXcQ  →  youtube: 'dQw4w9WgXcQ'
 const VIDEOS = [
-  { type: 'Presentación', title: 'Presentación de D’Lorean Tech',  desc: 'Quiénes somos y qué hacemos.',               youtube: '' },
-  { type: 'Demostración', title: 'Demo: sitio para un restaurante', desc: 'Recorrido por un proyecto de ejemplo.',      youtube: '' },
-  { type: 'Demostración', title: 'Demo: tienda en línea',           desc: 'Catálogo, filtros y pago en línea.',         youtube: '' },
-  { type: 'Tutorial',     title: 'Tutorial: cómo usar tu panel',    desc: 'Guía rápida para el cliente final.',         youtube: '' },
-  { type: 'Sustentación', title: 'Sustentación del proyecto',       desc: 'Presentación final ante el instructor.',     youtube: '' }
+  { type: 'Presentación', title: 'Presentación de D’Lorean Tech',  desc: 'Quiénes somos y qué hacemos.',               youtube: 'WUYqYma1qmw' },
+  { type: 'Demostración', title: 'Demo: sitio para un restaurante', desc: 'Recorrido por un proyecto de ejemplo.',      youtube: 'UHVR0MqJYfM' },
+  { type: 'Demostración', title: 'Demo: tienda en línea',           desc: 'Catálogo, filtros y pago en línea.',         youtube: '9oVfhupb77w' },
+  { type: 'Tutorial',     title: 'Tutorial: cómo usar tu panel',    desc: 'Guía rápida para el cliente final.',         youtube: 'STNnG5K3jdM' },
+  { type: 'Sustentación', title: 'Sustentación del proyecto',       desc: 'Presentación final ante el instructor.',     youtube: 'kXhXgcVpAU8' }
 ];
 
 // Correo que recibe el formulario de contacto
