@@ -220,9 +220,9 @@ $('#videoGrid').addEventListener('click', e => {
 }
 
 /* ---------- Certificados sin enlace: avisar en vez de saltar al inicio ---------- */
-document.addEventListener('click', e => {
+$('#certGrid')?.addEventListener('click', e => {
   const a = e.target.closest('a[data-placeholder]'); if (!a) return;
-  e.preventDefault(); alert('Este espacio está vacío. Abre evidencias.html y reemplaza href="#" por el enlace real (PDF o URL) y borra data-placeholder="true".');
+  e.preventDefault(); alert('Abre index.html y reemplaza href="#" de este certificado por el enlace real (PDF o URL).');
 });
 
 /* ---------- Botones de plan → preseleccionan el formulario ---------- */
