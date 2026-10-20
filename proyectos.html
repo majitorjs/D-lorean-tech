@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  D’LOREAN TECH — Sitio web corporativo
+  Proyecto formativo SENA · Técnico en Programación de Software
+  Archivos: index.html · style.css · script.js · assets/
+  Abrir con Visual Studio Code + extensión "Live Server"
+  ============================================================
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="D’Lorean Tech: diseño y desarrollo de páginas web y aplicaciones para pequeñas y medianas empresas y comerciantes locales." />
+  <meta name="theme-color" content="#05060f" />
+  <title>Proyectos | D’Lorean Tech</title>
+
+  <!-- Google Fonts: Orbitron (títulos) + Manrope (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome (íconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Hoja de estilos -->
+  <link rel="icon" type="image/jpeg" href="assets/img/logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-page="proyectos.html">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- =====================================================
+       BARRA LATERAL IZQUIERDA: menú por pestañas + galería
+       ===================================================== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menú lateral">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.jpg" alt="Logo D’Lorean Tech" width="46" height="46" />
+      <span>D’LOREAN<small>TECH</small></span>
+    </a>
+
+    <p class="side-title"><i class="fa-solid fa-bars-staggered"></i> Menú</p>
+    <nav class="side-tabs" aria-label="Pestañas del sitio">
+      <a href="index.html" class="tab active"><i class="fa-solid fa-house"></i> Inicio</a>
+      <a href="perfil.html" class="tab"><i class="fa-solid fa-user-graduate"></i> Perfil</a>
+      <a href="proyectos.html" class="tab"><i class="fa-solid fa-diagram-project"></i> Proyectos</a>
+      <a href="evidencias.html" class="tab"><i class="fa-solid fa-award"></i> Evidencias</a>
+      <a href="galeria.html" class="tab"><i class="fa-solid fa-images"></i> Galería</a>
+      <a href="videos.html" class="tab"><i class="fa-solid fa-circle-play"></i> Videos</a>
+      <a href="contacto.html" class="tab"><i class="fa-solid fa-envelope"></i> Contacto</a>
+    </nav>
+
+    <p class="side-title"><i class="fa-solid fa-images"></i> Galería multimedia</p>
+    <div class="mini-gallery" id="miniGallery" aria-label="Miniaturas de la galería"></div>
+    <a href="galeria.html" class="side-more">Ver toda la galería <i class="fa-solid fa-arrow-right"></i></a>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- =====================================================
+       NAVEGACIÓN HORIZONTAL SUPERIOR (fija)
+       ===================================================== -->
+  <header class="topbar" id="topbar">
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <a href="index.html" class="topbar-brand"><img src="assets/img/logo.jpg" alt="" width="34" height="34" /> D’Lorean Tech</a>
+    <nav class="topnav" aria-label="Navegación principal">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="perfil.html">Perfil de los estudiantes</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="galeria.html">Galería <span class="tn-sub">(fotos, videos)</span></a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <a href="contacto.html" class="btn btn-sm btn-primary topbar-cta">Cotizar proyecto</a>
+  </header>
+
+  <main id="contenido">
+<section class="first-visible section" id="proyectos">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Proyectos</span>
+          <h2>Soluciones que ya imaginamos para negocios locales</h2>
+          <p>Conceptos de demostración desarrollados por el equipo durante la etapa productiva.</p>
+        </header>
+        <div class="proj-grid">
+          <article class="proj reveal">
+            <img src="assets/img/proyecto-bistro.jpg" alt="Demo: Gourmet Bistro y Delivery" loading="lazy" />
+            <div class="proj-body"><span class="tag">Gastronomía</span><h3>Gourmet Bistro &amp; Delivery</h3><p>Plataforma de pedidos en línea con menú interactivo, pedidos y seguimiento de entregas.</p><a href="contacto.html" class="link">Quiero algo así <i class="fa-solid fa-arrow-right"></i></a></div>
+          </article>
+          <article class="proj reveal">
+            <img src="assets/img/proyecto-boutique.jpg" alt="Demo: Moda Urbana y Boutique" loading="lazy" />
+            <div class="proj-body"><span class="tag">Retail</span><h3>Moda Urbana &amp; Boutique</h3><p>Catálogo digital con filtros por talla y color, carrito de compras y pago en línea.</p><a href="contacto.html" class="link">Quiero algo así <i class="fa-solid fa-arrow-right"></i></a></div>
+          </article>
+          <article class="proj reveal">
+            <img src="assets/img/captura-servicios.jpg" alt="Captura del prototipo: servicios" loading="lazy" />
+            <div class="proj-body"><span class="tag">Institucional</span><h3>Sitio corporativo D’Lorean Tech</h3><p>Este mismo sitio: navegación fija, catálogo de módulos, galería y formulario de contacto.</p><a href="index.html" class="link">Volver al inicio <i class="fa-solid fa-arrow-up"></i></a></div>
+          </article>
+        </div>
+
+        <h3 class="sub-h reveal">Cronograma de la etapa productiva</h3>
+        <div class="timeline">
+          <div class="tl reveal"><span class="tl-m">Mayo</span><b>Bitácora 1</b><p>Información general del proyecto, equipo, problemática y requerimientos.</p></div>
+          <div class="tl reveal"><span class="tl-m">Junio</span><b>Bitácora 2</b><p>Identidad corporativa, DOFA, arquitectura, interfaces y base de datos.</p></div>
+          <div class="tl reveal"><span class="tl-m">Julio</span><b>Bitácora 3</b><p>Descripción del proyecto, ambiente de desarrollo, web y autenticación.</p></div>
+          <div class="tl reveal"><span class="tl-m">Agosto</span><b>Bitácora 4</b><p>Análisis del entorno, integración de módulos y pruebas funcionales.</p></div>
+          <div class="tl reveal"><span class="tl-m">Septiembre</span><b>Bitácora 5</b><p>Producto final, optimización, manuales y evidencias.</p></div>
+          <div class="tl reveal"><span class="tl-m">Octubre</span><b>Bitácora 6</b><p>Puesta en producción, capacitación, soporte y sustentación.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       PIE DE PÁGINA
+       ===================================================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand"><img src="assets/img/logo.jpg" alt="Logo D’Lorean Tech" width="46" height="46" /><span>D’LOREAN<small>TECH</small></span></a>
+        <p>Programando el software que lleva tu negocio al futuro.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/dlorean.tech" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/573206081230" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:dloriantech@gmail.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Programa</h4>
+        <p>Técnico en Programación de Software<br>Ficha 3201615</p>
+        <p><img src="assets/img/sena.png" alt="Logo SENA" class="sena" width="40" height="40" /> SENA · Centro de Servicios Financieros<br>I.E. Lucila Rubio de Laverde</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul class="flinks">
+          <li><a href="perfil.html">Perfil de los estudiantes</a></li>
+          <li><a href="index.html#servicios">Servicios</a></li>
+          <li><a href="index.html#planes">Planes</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="evidencias.html#bibliografia">Bibliografía</a></li>
+          <li><a href="evidencias.html#derechos">Derechos de autor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><i class="fa-solid fa-envelope"></i> dloriantech@gmail.com<br><i class="fa-solid fa-phone"></i> 320 608 1230<br><i class="fa-brands fa-instagram"></i> dlorean.tech<br><i class="fa-solid fa-location-dot"></i> Bogotá D.C.</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container">© <span id="year">2026</span> D’Lorean Tech · Técnico en Programación de Software · SENA / I.E. Lucila Rubio de Laverde. Todos los derechos reservados.</div></div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <button class="to-top" id="toTop" aria-label="Volver arriba"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Chatbot (demo de respuestas automáticas) -->
+  <button class="chat-fab" id="chatFab" aria-label="Abrir asistente virtual"><i class="fa-solid fa-robot"></i></button>
+  <section class="chat" id="chatBox" aria-label="Asistente virtual" hidden>
+    <header><span><i class="fa-solid fa-robot"></i> Asistente D’Lorean</span><button id="chatClose" aria-label="Cerrar chat"><i class="fa-solid fa-xmark"></i></button></header>
+    <div class="chat-msgs" id="chatMsgs" aria-live="polite"></div>
+    <div class="chat-quick" id="chatQuick"></div>
+    <form id="chatForm"><input id="chatInput" type="text" placeholder="Escribe tu pregunta…" autocomplete="off" aria-label="Mensaje" /><button aria-label="Enviar"><i class="fa-solid fa-paper-plane"></i></button></form>
+  </section>
+
+  <!-- Lightbox (imágenes) y modal (videos) -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Visor">
+    <button class="lb-close" id="lbClose" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <figure><div id="lbContent"></div><figcaption id="lbCaption"></figcaption></figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
